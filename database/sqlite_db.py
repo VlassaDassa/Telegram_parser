@@ -84,3 +84,23 @@ class Database:
         with self.connection:
             return self.cursor.execute('SELECT `status` FROM `cancel_parsing` WHERE tgid=?', (tgid, )).fetchone()
 
+#cancel_parsing
+#-status
+#-tgid
+
+#parsing_status
+#-status
+#-tgid
+
+#status_errors
+#-status
+#-tgid
+
+#spreadsheets
+#-spreadsheet_id
+#-tgid
+
+#start_registration
+#-user_name
+#-tgid
+#-date_reg

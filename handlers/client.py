@@ -40,7 +40,7 @@ from excel.excel_create_doc import create_excel_book, insert_to_excel
 import os
 
 # Parser
-from parser import time_pars
+from handlers import time_pars
 
 # APScheduler
 from apscheduler.schedulers.asyncio import AsyncIOScheduler
@@ -255,6 +255,7 @@ async def pars_excel(message: types.Message, state: FSMContext):
         await state.finish()
         time_work = (int(data['count_pages']) * 100)
         for i in range(time_work):
+            print(start_write_excel.is_alive())
             if start_write_excel.is_alive():
                 await asyncio.sleep(0.5)
             else:

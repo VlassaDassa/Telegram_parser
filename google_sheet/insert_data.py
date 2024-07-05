@@ -1,7 +1,6 @@
-import googleapiclient.errors
-
 from google_sheet.Spreadsheet import Spreadsheet
-from parser.parser import get_ids, get_data
+from google_sheet.parser_module import get_ids, get_data
+
 
 import time
 

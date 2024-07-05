@@ -22,7 +22,7 @@ async def on_shutdown(_):
 
 client.register_handlers_clients(dp)
 
-async def main():
+def main():
     executor.start_webhook(
         dispatcher=dp,
         webhook_path=WEBHOOK_PATH,
@@ -34,5 +34,11 @@ async def main():
     )
 
 if __name__ == '__main__':
-    await main()
+    variant_start = input('Variant start:\n1. Long polling;\n2. Webhook\nYour choice: ')
+
+    if variant_start == '1':
+        executor.start_polling(dp, on_shutdown=on_shutdown, skip_updates=True)
+
+    elif variant_start == '2':
+        main()
 

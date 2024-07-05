@@ -1,6 +1,6 @@
 from pathlib import Path
 
-from parser.parser import get_ids, get_data
+from excel.parser_module import get_ids, get_data
 
 from openpyxl import Workbook
 from openpyxl.styles import Alignment, PatternFill
